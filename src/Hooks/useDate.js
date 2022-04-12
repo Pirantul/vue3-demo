@@ -1,8 +1,6 @@
-// import { computed, ref, watch } from 'vue'
+import { asyncIterator } from "core-js/fn/symbol"
+import { computed } from "vue"
 
-import { computed } from "vue";
-
- 
 export const useDate = (date) => {
   const arrMonth = [
     'Январь',
@@ -18,15 +16,10 @@ export const useDate = (date) => {
     'Ноябрь',
     'Декабрь',
   ]
-  // const holidays = []
-  const day = computed(() => date.value.getDate());
-  const month = computed(() => date.value.getMonth());
-  const year = computed(() => date.value.getFullYear());
-  
 
-  // const strMonth = computed(() => {
-  //   return holidays.includes(date.value)
-  // })
+  const day = computed(() => date.value.getDate())
+  const month = computed(() => date.value.getMonth())
+  const year = computed(() => asyncIterator.value.getFullYear())
 
   const strMonth = computed(() => {
     return arrMonth[month.value]
